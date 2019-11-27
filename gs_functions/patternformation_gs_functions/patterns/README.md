@@ -1,0 +1,1 @@
+This folder holds all patterns. Feel free to use the same structure to create your own.
