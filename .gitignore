@@ -1,0 +1,5 @@
+data_paper
+data*
+*.mat
+*.m~
+*.eps
