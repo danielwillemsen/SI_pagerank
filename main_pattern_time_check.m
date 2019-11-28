@@ -21,10 +21,10 @@ for p = 1:numel(pattern_list)
     script_test_time
 end
 fprintf('Done for standard patterns \n')
-save('stats_4_6_9',Qtest_store_pattern,stats);
+save('data_paper/patternformation/time_stats_4_6_9',Qtest_store_pattern,stats);
 
 %% Plot
-load('stats_4_6_9.mat')
+load('data_paper/patternformation/time_stats_4_6_9.mat')
 for p = 1:3
     for i = 1:n_policies
         m(p,i) = mean(stats{p,i}.ev_time);
@@ -74,7 +74,7 @@ fprintf('Done for consensus 2 \n')
 save('global_time_stats_consensus_2',Qtest_store_consensus,stats);
 
 %%
-load('stats_consensus2_3to20.mat')
+load('data_paper/consensus/stats_consensus2_3to20.mat')
 for p = 1:17
     for i = 1:n_policies
         m(p,i) = mean(stats{p,i}.ev_time);

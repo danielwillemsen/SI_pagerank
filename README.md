@@ -1,7 +1,7 @@
 
 This repository holds the MATLAB code for the paper:
 
-***"PageRank: a Novel Micro-Macro Link for Evaluation and Optimization of Swarm Behavior via a Local Analysis"**
+**"PageRank: a Novel Micro-Macro Link for Evaluation and Optimization of Swarm Behavior via a Local Analysis"**
 *Mario Coppola, Jian Guo, Eberhard Gill, Guido de Croon, 2019.*
 
 The code has been developed using MATLAB 2019a on Ubuntu 18.04. It is not guaranteed that it will function as originally intended for other set-ups. In particular, please note that some functions used, especially those pertaining to graph analysis, are not included in older versions of MATLAB.
