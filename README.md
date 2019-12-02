@@ -13,7 +13,9 @@ https://link.springer.com/content/pdf/10.1007%2Fs11721-019-00172-z.pdf
 
 The code has been developed using MATLAB 2019a on Ubuntu 18.04. It is not guaranteed that it will function as originally intended for other set-ups. In particular, please note that some functions used, especially those pertaining to graph analysis, are not included in older versions of MATLAB.
 
-To run and reproduce the results, the following scripts can be used:
+To download the data used in the paper, use the script `download_data.sh', or do it manually by following the instructions on top of the script. The data is needed to reproduce the plots as in the paper.
+
+To run and reproduce the results, the following MATLAB scripts can be used:
 
 ## Pattern Formation
 * `main_patternformation_optimization.m`
