@@ -1,8 +1,7 @@
 
 This repository holds the MATLAB code for the paper:
 
-**"The PageRank algorithm as a method to optimize swarm behavior through local analysis"**
-
+**"The PageRank algorithm as a method to optimize swarm behavior through local analysis"**.
 *Mario Coppola, Jian Guo, Eberhard Gill, Guido de Croon, 2019.*
 Swarm Intelligence, December 2019, Volume 13, Issue 3–4, pp 277–319
 
