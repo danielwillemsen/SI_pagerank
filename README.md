@@ -11,6 +11,8 @@ https://link.springer.com/article/10.1007/s11721-019-00172-z
 Use the following link for a PDF:
 https://link.springer.com/content/pdf/10.1007%2Fs11721-019-00172-z.pdf
 
+If using our algorithm, please cite our paper accordingly.
+
 The code has been developed using MATLAB 2019a on Ubuntu 18.04. It is not guaranteed that it will function as originally intended for other set-ups. In particular, please note that some functions used, especially those pertaining to graph analysis, are not included in older versions of MATLAB.
 
 To download the data used in the paper, use the script `download_data.sh', or do it manually by following the instructions on top of the script. The data is needed to reproduce the plots as in the paper.
