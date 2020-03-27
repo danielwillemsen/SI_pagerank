@@ -10,7 +10,7 @@ generations_max = 1000;
 population.size = 10; % Genome population size
 s.bw = 3; % Number of choices m
 
-%% States
+% First get the gs1 graph from the pagerank method
 fprintf("Setting up problem \n");
 [ga, s, Q0] = initialize_parameters_consensus(generations_max, s);
 gs1 = gs1_consensus(Q0,s.states);
@@ -21,11 +21,11 @@ gs1 = gs1_consensus(Q0,s.states);
 
 %% From here on the approach is different from the original paper.
 % We construct a reward vector: taking any action in a desired state receives a reward of 1. Else 0.
-% reward vector r_sa: S x A
+% reward vector r_sa: S x A.
 r_sa = zeros(length(s.states),s.bw);
 r_sa(s.des,:) = 1.0;
 
-r_sa = -1.*reshape(r_sa, [length(r_sa)*s.bw,1]);
+r_sa = reshape(r_sa, [length(r_sa)*s.bw,1]);
 
 
 %% We then construct the state transition matrix 
@@ -63,7 +63,7 @@ end
 
 %% Reformulating the MDP into a linear programming (or linear optimization) problem:
 % Objective:
-% minimize transpose(r_sa)*x
+% minimize transpose(-r_sa)*x
 %
 % such that:    Aeq * x = beq
 %               x >= lb
@@ -115,7 +115,7 @@ lb = zeros(sizeP_ssa(1)*sizeP_ssa(3),1);
 fprintf("Solving LP problem")
 
 %% Solve the resulting problem problem:
-y = linprog(r_sa,[],[],Aeq,beq, lb, []);
+y = linprog(-1.*r_sa,[],[],Aeq,beq, lb, []);
 y = reshape(y,[length(y)/s.bw, s.bw])+0.00;
 y = y ./ sum(y,2);
 
@@ -123,7 +123,7 @@ y = y ./ sum(y,2);
 Q = y;
 Q(s.des,:) = 0;
 
-%% Evaluate fitness
+%% Evaluate fitness, using fitness from original code
 F = fitness_consensus_centrality(Q, s);
 
 fprintf("resulting fitness:" + string(F) + "\n")
