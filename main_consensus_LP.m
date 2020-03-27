@@ -136,18 +136,18 @@ fprintf("resulting fitness:" + string(F) + "\n")
 % less deadlocks?
 
 
-for i=1:length(y)
-    y_temp = y;
-    y_temp(i,:) = repmat(1/s.bw, 1, s.bw);
-    Q = y_temp;
-    Q(s.des,:) = 0;
-    F_temp = fitness_consensus_centrality(Q, s);
-    if abs(F_temp-F) < 0.00001
-        y = y_temp;
-    end
-end
-Q = y;
-Q(s.des,:) = 0;
+% for i=1:length(y)
+%     y_temp = y;
+%     y_temp(i,:) = repmat(1/s.bw, 1, s.bw);
+%     Q = y_temp;
+%     Q(s.des,:) = 0;
+%     F_temp = fitness_consensus_centrality(Q, s);
+%     if abs(F_temp-F) < 0.00001
+%         y = y_temp;
+%     end
+% end
+% Q = y;
+% Q(s.des,:) = 0;
 
 % Q = y+0.05;
 % Q = Q ./ sum(Q,2);
